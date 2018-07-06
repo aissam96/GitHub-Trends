@@ -51,7 +51,14 @@ class TableViewController: UITableViewController {
             fatalError("The dequeued cell is not an instance of ContactTableViewCell.")
         }
         
-        
+        do {
+            let url = URL(string: "http://verona-api.municipiumstaging.it/system/images/image/image/22/app_1920_1280_4.jpg")
+            let data = try Data(contentsOf: url!)
+            Repo1?.owner_image = UIImage(data: data)!
+        }
+        catch{
+            print(error)
+        }
         
         
         
